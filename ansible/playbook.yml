@@ -2,11 +2,12 @@
   hosts: web
   become: yes
   tasks:
-   - name: Copy WAR file to Tomcat
+    - name: Copy WAR file to Tomcat
       copy:
-        src: "/var/snap/jenkins/5047/workspace/ansible12/target/ansible12.war"
+        src: "/var/snap/jenkins/5022/workspace/ansible12/target/ansible12.war"
         dest: "/opt/tomcat/webapps/ansible12.war"
         remote_src: no
+    
     - name: Restart Tomcat
       shell: |
         /opt/tomcat/bin/shutdown.sh || true
