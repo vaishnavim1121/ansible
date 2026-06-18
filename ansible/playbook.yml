@@ -1,0 +1,8 @@
+-name= deploy to Tomcat
+hosts=web
+become=yes
+	tasks:
+		-name=Copy WAR file to Tomcat
+		copy:
+			src='../target/ansible12.war'
+			dest='opt/tomcat/webapps/ansible12.war'
